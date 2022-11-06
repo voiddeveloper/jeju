@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_cafe"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="1" />
+
+        <TextView
+            android:id="@+id/tv_cafe_name"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:text="카페명"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.03"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_cafe"
+            app:layout_constraintWidth_percent="1" />
+
+        <ImageView
+            android:id="@+id/iv_cafe_love"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_baseline_local_airport_24"
+            app:layout_constraintHeight_percent="0.03"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_cafe_name"
+            app:layout_constraintWidth_percent="0.1"
+            android:contentDescription="heart" />
+
+        <TextView
+            android:id="@+id/tv_cafe_love"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:text="99"
+            app:layout_constraintHeight_percent="0.03"
+            app:layout_constraintStart_toEndOf="@id/iv_cafe_love"
+            app:layout_constraintTop_toBottomOf="@id/tv_cafe_name"
+            app:layout_constraintWidth_percent="0.1" />
+
+        <TextView
+            android:id="@+id/tv_division"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:text="|"
+            app:layout_constraintWidth_percent="0.01"
+            app:layout_constraintHeight_percent="0.03"
+            app:layout_constraintStart_toEndOf="@id/tv_cafe_love"
+            app:layout_constraintTop_toBottomOf="@id/tv_cafe_name"
+            />
+
+        <ImageView
+            android:id="@+id/iv_cafe_heart"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_baseline_back_hand_24"
+            app:layout_constraintHeight_percent="0.03"
+            app:layout_constraintStart_toEndOf="@id/tv_division"
+            app:layout_constraintTop_toBottomOf="@id/tv_cafe_name"
+            app:layout_constraintWidth_percent="0.1"
+            android:contentDescription="heart" />
+
+        <TextView
+            android:id="@+id/tv_cafe_star"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:text="0(0)"
+            app:layout_constraintHeight_percent="0.03"
+            app:layout_constraintStart_toEndOf="@id/iv_cafe_heart"
+            app:layout_constraintTop_toBottomOf="@id/tv_cafe_name"
+            app:layout_constraintWidth_percent="0.3" />
+
+        <TextView
+            android:id="@+id/tv_division2"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:text="|"
+            app:layout_constraintWidth_percent="0.01"
+            app:layout_constraintHeight_percent="0.03"
+            app:layout_constraintStart_toEndOf="@id/tv_cafe_star"
+            app:layout_constraintTop_toBottomOf="@id/tv_cafe_name"
+            />
+        <TextView
+            android:id="@+id/tv_location_name"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:text="애월"
+            app:layout_constraintWidth_percent="0.1"
+            app:layout_constraintHeight_percent="0.03"
+            app:layout_constraintStart_toEndOf="@id/tv_division2"
+            app:layout_constraintTop_toBottomOf="@id/tv_cafe_name"
+            />
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:text="애월의 푸른바다"
+            app:layout_constraintWidth_percent="1"
+            app:layout_constraintHeight_percent="0.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_cafe_love"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

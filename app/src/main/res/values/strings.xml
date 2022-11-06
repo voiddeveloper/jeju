@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">제주도 여행 어플</string>
+    <string name="str_signup">회원가입</string>
+    <string name="str_signin">로그인</string>
+    <string name="str_id">아이디</string>
+    <string name="str_pwd">패스워드</string>
+    <string name="str_pwd_reconfirm">패스워드 재확인</string>
+    <string name="str_name">이름</string>
+    <string name="str_next">다음</string>
+    <string name="str_info_search_cafe">카페를 검색하세요.</string>
+    <string name="str_search_cafe_map">지도로 카페찾기 \n 위치 정보 허용을 꼭 해야합니다.</string>
+    <string name="str_near_search_cafe">가까운 거리 카페찾기</string>
+    <string name="str_buy_voucher">구매하기</string>
+    <string name="str_registration_voucher">이용권\n등록</string>
+    <string name="str_franchisee_cafes">카페 가맹점 목록</string>
+</resources>
