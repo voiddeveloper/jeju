@@ -8,7 +8,7 @@ public class CafeItem {
     String locationName;
     String locationDescription;
 
-    public CafeItem (int cafeImgSrc, String cafeName, String heartCount, String starCount, String locationName,String locationDescription){
+    public CafeItem (int cafeImgSrc, String cafeName, String heartCount, String starCount, String locationName, String locationDescription){
         this.cafeImgSrc = cafeImgSrc;
         this.cafeName = cafeName;
         this.heartCount = heartCount;
