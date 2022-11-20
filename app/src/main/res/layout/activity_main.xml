@@ -15,6 +15,7 @@
             android:layout_height="0dp"
             android:drawableTop="@android:drawable/ic_dialog_map"
             android:drawablePadding="16dp"
+            android:paddingTop="100dp"
             android:gravity="center"
             android:text="@string/str_search_cafe_map"
             android:textSize="12sp"
