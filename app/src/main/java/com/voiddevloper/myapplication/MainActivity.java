@@ -27,6 +27,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private CafesAdapter cafesAdapter;
@@ -42,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         dataList.add(new CafeItem(R.drawable.cafe_image3,"애월카페", "90", "4.8(45)", "애월", "애월너무좋아요."));
         dataList.add(new CafeItem(R.drawable.cafe_image4,"애월카페", "90", "4.8(45)", "애월", "애월너무좋아요."));
         //        getHashKey();
+        loadData();
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         // ArrayList에 데이터를 추가해주고 SharedPreference를 이용하여 데이터를 저장하는 코드
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
@@ -115,6 +120,40 @@ public class MainActivity extends AppCompatActivity {
         }.getType();
         ArrayList<CafeItem> arrayList = gson.fromJson(json, type);
         return arrayList;
+    }
+
+    private void loadData() {
+        RetrofitClient retrofitClient = RetrofitClient.getInstance();
+        RetrofitApi retrofitApi;
+        String SECRET_KEY="C4+BhRfsgoTTfNNCazCNuSn5UsGIAt7R97wQCdN2vD4LIoSqFhM8J9eIZFG9WM797KTf35zlKLPVp2Yq6kFz9g==";
+
+        if (retrofitClient != null) {
+            retrofitApi = RetrofitClient.getRetrofitApi();
+            retrofitApi.getData(SECRET_KEY,1,10).enqueue(new Callback<DataClass>() {
+                @Override
+                public void onResponse(Call<DataClass> call, Response<DataClass> response) {
+                    DataClass dataClass = response.body();
+                    DataModel[] data = dataClass != null
+                    ? dataClass.getDataModel()
+                    : new DataModel[0];
+
+                    Log.e("a", response.body()+", "+ response.raw());
+                    for (int i = 0; i < data.length; i++){
+                        String a = data[i].getLatitude();
+                        Log.e("a", a);
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<DataClass> call, Throwable t) {
+                    call.cancel();
+                    Log.e("t", t.toString());
+
+                }
+
+            });
+
+        }
     }
 
 }
